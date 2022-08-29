@@ -3,6 +3,7 @@ package hassan.farooqui.employeemanager.service;
 import hassan.farooqui.employeemanager.model.BasicReport;
 import hassan.farooqui.employeemanager.model.Employee;
 import hassan.farooqui.employeemanager.repo.BasicRepostRepo;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,6 +26,11 @@ public class BasicRepoService {
     public List<BasicReport> findAllBasicreport()
     {
         return basicRepostRepo.findAll();
+    }
+
+    public List <BasicReport> findBasicReportByCmId(String cmId)
+    {
+        return basicRepostRepo.findBasicReportByCmId(cmId);
     }
 
 }

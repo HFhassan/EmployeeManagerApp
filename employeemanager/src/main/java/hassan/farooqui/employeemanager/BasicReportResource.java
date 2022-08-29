@@ -33,4 +33,11 @@ public class BasicReportResource {
         BasicReport newBasicReport = basicRepoService.addBasicReport(basicReport);
         return  new ResponseEntity<>(newBasicReport, HttpStatus.CREATED);
     }
+
+    @GetMapping("/find/{cmId}")
+    public ResponseEntity<List<BasicReport>> getBasicReportByCmId (@PathVariable("cmId") String cmId)
+    {
+        List <BasicReport> basicreport =  basicRepoService.findBasicReportByCmId(cmId);
+        return new ResponseEntity<>(basicreport, HttpStatus.OK);
+    }
 }
